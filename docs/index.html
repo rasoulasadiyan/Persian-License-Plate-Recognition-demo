@@ -14,25 +14,65 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f3f3f3;
+            background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff);
+            background-size: 600% 600%;
+            animation: gradientBG 10s ease infinite;
         }
-        .gradio-container {
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
             max-width: 800px;
-            width: 100%;
+            width: 90%;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        gradio-app {
-            display: block;
+
+        .header {
+            background-color: #2980b9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gradio-app {
             width: 100%;
             height: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="gradio-container">
-        <gradio-app src="https://rasoulub-test2.hf.space"></gradio-app>
+    <div class="container">
+        <div class="header">
+            <h1>Gradio App</h1>
+            <p>Welcome to our interactive application</p>
+        </div>
+        <gradio-app class="gradio-app" src="https://rasoulub-test2.hf.space"></gradio-app>
+        <div class="footer">
+            <p>Developed by YourName</p>
+        </div>
     </div>
 </body>
 </html>
