@@ -51,14 +51,14 @@
         iframe {
             border: none;
             width: 100%;
-            height: 800px;
+            height: calc(100vh - 140px); /* Adjusted to full screen minus header and footer heights */
             border-radius: 0 0 15px 15px;
         }
 
         .footer {
             background: #010127; /* Naive blue color for footer */
             color: #ffffff;
-            padding: 10px;
+            padding: 20px; /* Increased padding for bigger footer */
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
             border-radius: 0 0 15px 15px;
         }
@@ -86,7 +86,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Persian license Plate Detection and Recognition</h1>
+            <h1>P2ersian license Plate Detection and Recognition</h1>
         </div>
         <iframe src="https://rasoulub-test2.hf.space"></iframe>
         <div class="footer">
