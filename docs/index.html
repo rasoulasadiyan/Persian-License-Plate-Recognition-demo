@@ -72,30 +72,11 @@
             text-align: center;
             padding: 15px 0;
             margin-top: 20px;
+            border-radius: 0 0 10px 10px;
         }
 
         footer p {
             margin: 0;
-        }
-
-        .color-option {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .color-option button {
-            width: 30px;
-            height: 30px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .color-option button:hover {
-            transform: scale(1.2);
         }
     </style>
 </head>
@@ -103,34 +84,17 @@
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Dataset</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <iframe src="https://rasoulub-test2.hf.space"></iframe>
-        
-        <div class="color-option">
-            <button id="color1" style="background-color: #3498db;"></button>
-            <button id="color2" style="background-color: #2ecc71;"></button>
-            <button id="color3" style="background-color: #e74c3c;"></button>
-            <button id="color4" style="background-color: #9b59b6;"></button>
-        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Gradio App. All rights reserved.</p>
     </footer>
-
-    <script>
-        const colors = ['#3498db', '#2ecc71', '#e74c3c', '#9b59b6'];
-
-        document.querySelectorAll('.color-option button').forEach((button, index) => {
-            button.addEventListener('click', () => {
-                document.body.style.background = colors[index];
-            });
-        });
-    </script>
 </body>
 </html>
