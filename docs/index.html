@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gradio App</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -16,121 +15,84 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: #f7f7f7;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             color: #333;
         }
 
-        nav {
-            background: #2c3e50;
-            color: #ffffff;
-            padding: 15px 0;
+        .container {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
             text-align: center;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
+        .header {
+            background: #6a11cb;
+            background: linear-gradient(to right, #2575fc, #6a11cb);
             color: #ffffff;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #f39c12;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
         }
 
         iframe {
             border: none;
             width: 100%;
             height: 600px;
-            border-radius: 10px;
+            border-radius: 0 0 15px 15px;
         }
 
-        footer {
-            background: #2c3e50;
+        .footer {
+            background: #6a11cb;
+            background: linear-gradient(to right, #2575fc, #6a11cb);
             color: #ffffff;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
+            padding: 10px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 15px 15px;
         }
 
-        footer p {
+        .footer p {
             margin: 0;
+            font-size: 0.9em;
         }
 
-        .color-option {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
 
-        .color-option button {
-            width: 30px;
-            height: 30px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+            .header h1 {
+                font-size: 1.5em;
+            }
 
-        .color-option button:hover {
-            transform: scale(1.2);
+            iframe {
+                height: 400px;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
     <div class="container">
+        <div class="header">
+            <h1>Welcome to the Gradio App</h1>
+        </div>
         <iframe src="https://rasoulub-test2.hf.space"></iframe>
-        
-        <div class="color-option">
-            <button id="color1" style="background-color: #3498db;"></button>
-            <button id="color2" style="background-color: #2ecc71;"></button>
-            <button id="color3" style="background-color: #e74c3c;"></button>
-            <button id="color4" style="background-color: #9b59b6;"></button>
+        <div class="footer">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Gradio App. All rights reserved.</p>
-    </footer>
-
-    <script>
-        const colors = ['#3498db', '#2ecc71', '#e74c3c', '#9b59b6'];
-
-        document.querySelectorAll('.color-option button').forEach((button, index) => {
-            button.addEventListener('click', () => {
-                document.body.style.background = colors[index];
-            });
-        });
-    </script>
 </body>
 </html>
